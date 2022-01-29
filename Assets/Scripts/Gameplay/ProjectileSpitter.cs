@@ -7,8 +7,11 @@ public class ProjectileSpitter : MonoBehaviour
     [SerializeField] private GameObjectCollection mortalProjectiles = default(GameObjectCollection);
     [SerializeField] private GameObjectCollection hardnessProjectiles = default(GameObjectCollection);
     [SerializeField] private BoolReference isGameOver = default(BoolReference);
+    [SerializeField] private IntReference punishFrequency = default(IntReference);
     [SerializeField] private FloatReference minSpawnTime = default(FloatReference);
-    [SerializeField] private FloatReference maxSpawnTime = default(FloatReference);
+    [SerializeField] private FloatReference maxSpawnTime = default(FloatReference); 
+    [SerializeField] private GameEvent setPunish = default(GameEvent);
+    private int spittedProjectilesAmount;
     private float leftBorder;
     private float rightBorder;
     private float bottomBorder;
@@ -16,6 +19,7 @@ public class ProjectileSpitter : MonoBehaviour
 
     private void Start()
     {
+        spittedProjectilesAmount = 0;
         lastProjectileType = ProjectileType.mortal;
 
         Vector2 topRightCorner = new Vector2(1, 1);
@@ -64,6 +68,7 @@ public class ProjectileSpitter : MonoBehaviour
                     mortalProjectiles[i].transform.localRotation = initialRotation;
                     mortalProjectiles[i].SetActive(true);
                     lastProjectileType = ProjectileType.mortal;
+                    spittedProjectilesAmount++;
                     break;
                 }
             }
@@ -78,13 +83,17 @@ public class ProjectileSpitter : MonoBehaviour
                     hardnessProjectiles[i].transform.localRotation = initialRotation;
                     hardnessProjectiles[i].SetActive(true);
                     lastProjectileType = ProjectileType.hardness;
+                    spittedProjectilesAmount++;
                     break;
                 }
             }
         }
 
-
-
+        if (spittedProjectilesAmount >= punishFrequency.Value)
+        {
+            spittedProjectilesAmount = 0;
+            setPunish.Raise();
+        }
     }
 }
 

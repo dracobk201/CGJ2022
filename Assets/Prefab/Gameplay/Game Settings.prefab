@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3768757753322814504}
   - component: {fileID: 4568056239817639410}
+  - component: {fileID: 2665057255319204246}
+  - component: {fileID: 1875834246038131252}
   m_Layer: 0
   m_Name: Game Settings
   m_TagString: Untagged
@@ -51,7 +53,103 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
+  initialPunishFrequency:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2bfda4d70c002494e8bbdc41ce89a830, type: 2}
+  punishFrequency:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 98d9db61119d5d640a49f5dce28ec341, type: 2}
+  initialMinSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: bda572968750238408c06790d7aad1ac, type: 2}
+  minSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 95993df0183dbdf4d9b98b35a6cec01a, type: 2}
+  initialMaxSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2e434de092192df4c98662c770f4575a, type: 2}
+  maxSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 536b8d833a19dc341b5e1cafd7375f7e, type: 2}
   hardnessCurrentAmount:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 332916267fd338e4ea2c9223bba58fde, type: 2}
+  initialProjectileVelocity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2d7d4cbd017d65943aa8726bae220eba, type: 2}
+  projectileVelocity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 25f7a4251cbde294097397381735a087, type: 2}
+--- !u!114 &2665057255319204246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 1b0925c2da96ae540a108bdd8b9dd438, type: 2}
+  _event: {fileID: 11400000, guid: 1b0925c2da96ae540a108bdd8b9dd438, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameSetter, Assembly-CSharp
+        m_MethodName: GeneratePunish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1875834246038131252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameSetter, Assembly-CSharp
+        m_MethodName: DeccreaseFrecuency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

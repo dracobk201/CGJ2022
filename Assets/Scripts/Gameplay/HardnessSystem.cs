@@ -7,6 +7,7 @@ public class HardnessSystem : MonoBehaviour
 {
     [SerializeField] private BoolReference isGameOver = default(BoolReference);
     [SerializeField] private BoolReference isHardnessActive = default(BoolReference);
+    [SerializeField] private FloatReference hardnessDecreaseFactor = default(FloatReference);
     [SerializeField] private FloatReference hardnessCurrentAmount = default(FloatReference);
     [SerializeField] private FloatReference hardnessIncrementalAmount = default(FloatReference);
     [SerializeField] private FloatReference hardnessMaxAmount = default(FloatReference);
@@ -55,7 +56,7 @@ public class HardnessSystem : MonoBehaviour
         isHardnessActive.Value = true;
         while (hardnessCurrentAmount.Value > 0)
         {
-            hardnessCurrentAmount.Value -= Time.deltaTime;
+            hardnessCurrentAmount.Value -= hardnessDecreaseFactor.Value * Time.deltaTime;
             yield return null;
         }
         isHardnessActive.Value = false;

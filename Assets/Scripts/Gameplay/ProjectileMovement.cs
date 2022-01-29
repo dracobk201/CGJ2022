@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
 {
-    [SerializeField] private FloatReference bulletVelocity = default(FloatReference);
-    [SerializeField] private FloatReference bulletTimeOfLife = default(FloatReference);
+    [SerializeField] private FloatReference projectileVelocity = default(FloatReference);
+    [SerializeField] private FloatReference projectileTimeOfLife = default(FloatReference);
     [SerializeField] private ProjectileTypeGameEvent playerImpacted = default(ProjectileTypeGameEvent);
+    [SerializeField] private GameEvent increasePunish = default(GameEvent);
     [HideInInspector] public ProjectileType type;
 
     private void OnEnable()
@@ -16,7 +17,7 @@ public class ProjectileMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.forward * bulletVelocity.Value * Time.deltaTime;
+        transform.position += transform.forward * projectileVelocity.Value * Time.deltaTime;
     }
 
     private void Destroy()
@@ -27,7 +28,9 @@ public class ProjectileMovement : MonoBehaviour
 
     private IEnumerator AutoDestruction()
     {
-        yield return new WaitForSeconds(bulletTimeOfLife.Value);
+        yield return new WaitForSeconds(projectileTimeOfLife.Value);
+        if (gameObject.activeInHierarchy)
+            increasePunish.Raise();
         Destroy();
     }
 

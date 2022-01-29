@@ -57,6 +57,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
+  hardnessDecreaseFactor:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 1dd2012cbded4fc4aa18050088e52275, type: 2}
   hardnessCurrentAmount:
     _useConstant: 0
     _constantValue: 0

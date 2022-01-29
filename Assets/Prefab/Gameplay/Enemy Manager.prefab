@@ -112,6 +112,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  punishFrequency:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 98d9db61119d5d640a49f5dce28ec341, type: 2}
   minSpawnTime:
     _useConstant: 0
     _constantValue: 0
@@ -120,6 +124,7 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 536b8d833a19dc341b5e1cafd7375f7e, type: 2}
+  setPunish: {fileID: 11400000, guid: 1b0925c2da96ae540a108bdd8b9dd438, type: 2}
 --- !u!114 &3638815368587578182
 MonoBehaviour:
   m_ObjectHideFlags: 0
