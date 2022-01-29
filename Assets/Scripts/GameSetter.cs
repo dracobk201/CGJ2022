@@ -30,7 +30,6 @@ public class GameSetter : MonoBehaviour
 
     public void GeneratePunish()
     {
-        Debug.Log("Time to punish");
         punishedTimes++;
 
         var punishProbability = Random.value;

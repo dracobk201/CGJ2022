@@ -26,7 +26,7 @@ public class GameplayCanvasActions : MonoBehaviour
     
         if (isHardnessActive.Value && hardnessActiveIcon.color.a == 0)
             hardnessActiveIcon.color = new Color(hardnessActiveIcon.color.r, hardnessActiveIcon.color.g, hardnessActiveIcon.color.b, 1);
-        else if (!isHardnessActive.Value && hardnessActiveIcon.color.a == 1)
+        if (!isHardnessActive.Value && hardnessActiveIcon.color.a == 1)
             hardnessActiveIcon.color = new Color(hardnessActiveIcon.color.r, hardnessActiveIcon.color.g, hardnessActiveIcon.color.b, 0);
     }
 

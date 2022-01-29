@@ -14,6 +14,16 @@ public class HardnessSystem : MonoBehaviour
     [SerializeField] private FloatReference mortalDamageValue = default(FloatReference);
     [SerializeField] private GameEvent playerDead = default(GameEvent);
 
+    private void Update()
+    {
+        if (hardnessCurrentAmount.Value > 0 && isHardnessActive.Value)
+        {
+            hardnessCurrentAmount.Value -= hardnessDecreaseFactor.Value * Time.deltaTime;
+            if (hardnessCurrentAmount.Value <= 0)
+                hardnessCurrentAmount.Value = 0;
+        }
+    }
+
     public void ProjectileImpact(ProjectileType type)
     {
         if (type.Equals(ProjectileType.mortal))
@@ -26,7 +36,7 @@ public class HardnessSystem : MonoBehaviour
             else
             {
                 MMVibrationManager.Haptic(HapticTypes.Failure);
-                hardnessCurrentAmount.Value = 0;
+                hardnessCurrentAmount.Value -= 500;
             }
 
             if (hardnessCurrentAmount.Value <= 0)
@@ -47,18 +57,9 @@ public class HardnessSystem : MonoBehaviour
 
     public void PlayerTapped()
     {
-        if (!isHardnessActive.Value && hardnessCurrentAmount.Value > 0)
-            StartCoroutine(TriggerHardness());
-    }
-
-    private IEnumerator TriggerHardness()
-    {
-        isHardnessActive.Value = true;
-        while (hardnessCurrentAmount.Value > 0)
-        {
-            hardnessCurrentAmount.Value -= hardnessDecreaseFactor.Value * Time.deltaTime;
-            yield return null;
-        }
-        isHardnessActive.Value = false;
+        if (isHardnessActive.Value)
+            isHardnessActive.Value = false;
+        else if (!isHardnessActive.Value && hardnessCurrentAmount.Value > 0)
+            isHardnessActive.Value = true;
     }
 }
