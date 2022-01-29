@@ -250,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 937356582728672303}
   - component: {fileID: 4956452108064740756}
-  - component: {fileID: 9191942181350439423}
   - component: {fileID: 1420859608692719052}
   - component: {fileID: 4128059173034258106}
   m_Layer: 5
@@ -301,39 +300,6 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 8d6fc47fcb73fbd4fb5c1705ac922570, type: 2}
   hardnessBar: {fileID: 1584992077800739700}
---- !u!114 &9191942181350439423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7190940215302732696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ed83aa78a5e3640b83048089f27957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 74cb246f1f1ad8e4687961cdf98e996b, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4956452108064740756}
-        m_TargetAssemblyTypeName: GameplayCanvasActions, Assembly-CSharp
-        m_MethodName: UpdateValues
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: 0
 --- !u!222 &1420859608692719052
 CanvasRenderer:
   m_ObjectHideFlags: 0

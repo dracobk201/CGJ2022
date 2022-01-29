@@ -1,17 +1,23 @@
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
-public class Dragger : MonoBehaviour
+public class TapperDragger : MonoBehaviour
 {
+    [SerializeField] private GameEvent playerTapped = default(GameEvent);
     private float dist;
     private bool dragging = false;
     private Vector3 offset;
     private Transform toDrag;
     private Camera mainCamera;
     private Touch currentTouch;
+    private bool playerTouched;
+    private int framesPassed;
 
     private void Start()
     {
         mainCamera = Camera.main;
+        framesPassed = 0;
+        playerTouched = false;
     }
 
     private void Update()
@@ -42,18 +48,35 @@ public class Dragger : MonoBehaviour
                     v3 = mainCamera.ScreenToWorldPoint(v3);
                     offset = toDrag.position - v3;
                     dragging = true;
+                    playerTouched = true;
                 }
             }
         }
 
-        if (dragging && currentTouch.phase == TouchPhase.Moved)
+        if (currentTouch.phase == TouchPhase.Moved)
         {
-            v3 = new Vector3(Input.mousePosition.x, 0, dist);
-            v3 = mainCamera.ScreenToWorldPoint(v3);
-            toDrag.position = v3 + offset;
+            if (dragging)
+            {
+                v3 = new Vector3(Input.mousePosition.x, 0, dist);
+                v3 = mainCamera.ScreenToWorldPoint(v3);
+                toDrag.position = v3 + offset;
+            }
+            framesPassed++;
         }
 
-        if (dragging && (currentTouch.phase == TouchPhase.Ended || currentTouch.phase == TouchPhase.Canceled))
-            dragging = false;
+        if (currentTouch.phase == TouchPhase.Ended || currentTouch.phase == TouchPhase.Canceled)
+        {
+            if (framesPassed < 15 && playerTouched)
+            {
+                Debug.Log("tapped");
+                playerTapped.Raise();
+            }
+            playerTouched = false;
+            framesPassed = 0;
+
+            if (dragging)
+                dragging = false;
+        }
+            
     }
 }

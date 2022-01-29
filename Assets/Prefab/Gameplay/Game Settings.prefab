@@ -47,6 +47,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  isDarknessActive:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
   hardnessCurrentAmount:
     _useConstant: 0
     _constantValue: 0

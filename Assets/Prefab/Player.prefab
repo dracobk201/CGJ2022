@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4538349485999211346}
   - component: {fileID: 5076379917294369214}
   - component: {fileID: 3473337984596558794}
+  - component: {fileID: 6679612514297087244}
   - component: {fileID: 4538349485999211349}
   - component: {fileID: 8775058445772320078}
   - component: {fileID: 8186009724696697206}
@@ -52,6 +53,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  isHardnessActive:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
   hardnessCurrentAmount:
     _useConstant: 0
     _constantValue: 0
@@ -68,6 +73,7 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c1eb61afe4b2c4caa0d41480d4f4de, type: 2}
+  playerDead: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
 --- !u!114 &3473337984596558794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +107,38 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _debugValue: 0
+--- !u!114 &6679612514297087244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538349485999211348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 0d6867e6f8bc98f4ab5ba577ebac0c29, type: 2}
+  _event: {fileID: 11400000, guid: 0d6867e6f8bc98f4ab5ba577ebac0c29, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5076379917294369214}
+        m_TargetAssemblyTypeName: HardnessSystem, Assembly-CSharp
+        m_MethodName: PlayerTapped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &4538349485999211349
 BoxCollider:
   m_ObjectHideFlags: 0
