@@ -67,10 +67,7 @@ public class TapperDragger : MonoBehaviour
         if (currentTouch.phase == TouchPhase.Ended || currentTouch.phase == TouchPhase.Canceled)
         {
             if (framesPassed < 15 && playerTouched)
-            {
-                Debug.Log("tapped");
                 playerTapped.Raise();
-            }
             playerTouched = false;
             framesPassed = 0;
 

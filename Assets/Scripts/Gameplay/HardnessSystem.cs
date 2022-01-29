@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using ScriptableObjectArchitecture;
+using MoreMountains.NiceVibrations;
 
 public class HardnessSystem : MonoBehaviour
 {
@@ -17,9 +18,15 @@ public class HardnessSystem : MonoBehaviour
         if (type.Equals(ProjectileType.mortal))
         {
             if (isHardnessActive.Value == true)
+            {
+                MMVibrationManager.Haptic(HapticTypes.RigidImpact);
                 hardnessCurrentAmount.Value -= mortalDamageValue.Value;
+            }
             else
+            {
+                MMVibrationManager.Haptic(HapticTypes.Failure);
                 hardnessCurrentAmount.Value = 0;
+            }
 
             if (hardnessCurrentAmount.Value <= 0)
             {
@@ -30,6 +37,7 @@ public class HardnessSystem : MonoBehaviour
         }
         else if (type.Equals(ProjectileType.hardness))
         {
+            MMVibrationManager.Haptic(HapticTypes.LightImpact);
             hardnessCurrentAmount.Value += hardnessIncrementalAmount.Value;
             if (hardnessCurrentAmount.Value > hardnessMaxAmount.Value)
                 hardnessCurrentAmount.Value = hardnessMaxAmount.Value;

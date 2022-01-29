@@ -1,3 +1,4 @@
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class GameOverCanvasActions : MonoBehaviour
 
     public void Restart()
     {
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         SceneManager.LoadScene(0);
     }
 }
