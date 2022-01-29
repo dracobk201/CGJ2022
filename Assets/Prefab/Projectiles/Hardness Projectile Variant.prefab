@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4538349485999211348, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
       propertyPath: m_Name
-      value: Good Projectile
+      value: Hardness Projectile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8186009724696697206, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
       propertyPath: m_Materials.Array.data[0]
