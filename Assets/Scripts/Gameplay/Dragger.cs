@@ -34,7 +34,6 @@ public class Dragger : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.collider.tag);
                 if (hit.collider.tag == "Player")
                 {
                     toDrag = hit.transform;

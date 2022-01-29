@@ -16,7 +16,7 @@ public class ProjectileSpitter : MonoBehaviour
 
     private void Start()
     {
-        lastProjectileType = ProjectileType.Type2;
+        lastProjectileType = ProjectileType.hardness;
 
         Vector2 topRightCorner = new Vector2(1, 1);
         Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
@@ -54,7 +54,7 @@ public class ProjectileSpitter : MonoBehaviour
         var lookRotation = Quaternion.LookRotation(direction);
         var initialRotation = lookRotation;
 
-        if (lastProjectileType.Equals(ProjectileType.Type2))
+        if (lastProjectileType.Equals(ProjectileType.hardness))
         {
             for (int i = 0; i < mortalProjectiles.Count; i++)
             {
@@ -63,12 +63,12 @@ public class ProjectileSpitter : MonoBehaviour
                     mortalProjectiles[i].transform.localPosition = initialPosition;
                     mortalProjectiles[i].transform.localRotation = initialRotation;
                     mortalProjectiles[i].SetActive(true);
-                    lastProjectileType = ProjectileType.Type1;
+                    lastProjectileType = ProjectileType.mortal;
                     break;
                 }
             }
         }
-        else if (lastProjectileType.Equals(ProjectileType.Type1))
+        else if (lastProjectileType.Equals(ProjectileType.mortal))
         {
             for (int i = 0; i < hardnessProjectiles.Count; i++)
             {
@@ -77,7 +77,7 @@ public class ProjectileSpitter : MonoBehaviour
                     hardnessProjectiles[i].transform.localPosition = initialPosition;
                     hardnessProjectiles[i].transform.localRotation = initialRotation;
                     hardnessProjectiles[i].SetActive(true);
-                    lastProjectileType = ProjectileType.Type2;
+                    lastProjectileType = ProjectileType.hardness;
                     break;
                 }
             }
@@ -90,5 +90,5 @@ public class ProjectileSpitter : MonoBehaviour
 
 public enum ProjectileType
 {
-    Type1, Type2
+    mortal, hardness
 }

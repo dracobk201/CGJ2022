@@ -1,13 +1,13 @@
 using ScriptableObjectArchitecture;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
 {
     [SerializeField] private FloatReference bulletVelocity = default(FloatReference);
     [SerializeField] private FloatReference bulletTimeOfLife = default(FloatReference);
-    [SerializeField] private GameEvent playerImpacted = default(GameEvent);
+    [SerializeField] private ProjectileTypeGameEvent playerImpacted = default(ProjectileTypeGameEvent);
+    [HideInInspector] public ProjectileType type;
 
     private void OnEnable()
     {
@@ -31,13 +31,13 @@ public class ProjectileMovement : MonoBehaviour
         Destroy();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         string targetTag = other.tag;
         if (targetTag.Equals("Player"))
         {
+            playerImpacted.Raise(type);
             Destroy();
-            playerImpacted.Raise();
         }
     }
 }

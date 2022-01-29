@@ -1,7 +1,7 @@
 using UnityEngine;
 using ScriptableObjectArchitecture;
 
-public class EnemyObjectPool : MonoBehaviour
+public class ProjectileObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObjectCollection mortalProjectiles = default(GameObjectCollection);
     [SerializeField] private GameObjectCollection hardnessProjectiles = default(GameObjectCollection);
@@ -26,6 +26,8 @@ public class EnemyObjectPool : MonoBehaviour
             GameObject hardness = Instantiate(hardnessProjectilePrefab) as GameObject;
             mortal.GetComponent<Transform>().SetParent(mortalContainer);
             hardness.GetComponent<Transform>().SetParent(hardnessContainer);
+            mortal.GetComponent<ProjectileMovement>().type = ProjectileType.mortal;
+            hardness.GetComponent<ProjectileMovement>().type = ProjectileType.hardness;
             mortalProjectiles.Add(mortal);
             hardnessProjectiles.Add(hardness);
             mortal.SetActive(false);
