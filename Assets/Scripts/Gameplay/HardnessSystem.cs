@@ -9,11 +9,6 @@ public class HardnessSystem : MonoBehaviour
     [SerializeField] private FloatReference hardnessMaxAmount = default(FloatReference);
     [SerializeField] private FloatReference mortalDamageValue = default(FloatReference);
 
-    private void Start()
-    {
-        hardnessCurrentAmount.Value = 0;
-    }
-
     public void ProjectileImpact(ProjectileType type)
     {
         if (type.Equals(ProjectileType.mortal))

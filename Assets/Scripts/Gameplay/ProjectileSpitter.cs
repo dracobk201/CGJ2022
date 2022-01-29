@@ -16,7 +16,7 @@ public class ProjectileSpitter : MonoBehaviour
 
     private void Start()
     {
-        lastProjectileType = ProjectileType.hardness;
+        lastProjectileType = ProjectileType.mortal;
 
         Vector2 topRightCorner = new Vector2(1, 1);
         Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
