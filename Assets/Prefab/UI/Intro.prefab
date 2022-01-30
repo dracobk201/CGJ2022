@@ -221,6 +221,8 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: ad77f9dfa66ae7048b9b4c098748e6f8, type: 2}
   startGame: {fileID: 11400000, guid: e3c75ae35e7ead244b91dbe3c1ce291f, type: 2}
   canvasGroup: {fileID: 1368636237367197627}
+  sfxToPlay: {fileID: 11400000, guid: da83c9e5d5caf594d91b9ff51d1329c3, type: 2}
+  uiConfirmAudio: {fileID: 8300000, guid: c4e4b28a45931fa4f96c0465ebe83d74, type: 3}
 --- !u!1 &3863040555368791145
 GameObject:
   m_ObjectHideFlags: 0

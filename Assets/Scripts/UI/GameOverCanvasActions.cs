@@ -11,6 +11,9 @@ public class GameOverCanvasActions : MonoBehaviour
     [SerializeField] private CanvasGroup panelCanvasGroup = default(CanvasGroup);
     [SerializeField] private Text currentPointsLabel = default(Text);
     [SerializeField] private Text leaderboardText = default(Text);
+    [Header("Audio")]
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip uiConfirmAudio = default(AudioClip);
 
     public void ShowGameOverPanel()
     {
@@ -32,6 +35,7 @@ public class GameOverCanvasActions : MonoBehaviour
 
     public void Restart()
     {
+        sfxToPlay.Raise(uiConfirmAudio);
         MMVibrationManager.Haptic(HapticTypes.LightImpact);
         SceneManager.LoadScene(0);
     }

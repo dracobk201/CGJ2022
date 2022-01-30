@@ -24,11 +24,20 @@ public class GameAdministrator : MonoBehaviour
     [SerializeField] private IntReference mortalProjectilesDestroyed = default(IntReference);
     [SerializeField] private FloatReference pointsPerSecond = default(FloatReference);
     [SerializeField] private FloatReference timePlayed = default(FloatReference);
+    [Header("Audio")]
+    [SerializeField] private AudioClipGameEvent bgmToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip gameplayBGMAudio = default(AudioClip);
+    [SerializeField] private AudioClip gameoverBGMAudio = default(AudioClip);
     private int punishedTimes;
 
     private void Awake()
     {
         ResetValues();
+    }
+
+    private void Start()
+    {
+        bgmToPlay.Raise(gameplayBGMAudio);
     }
 
     private void Update()
@@ -39,6 +48,7 @@ public class GameAdministrator : MonoBehaviour
 
     private void ResetValues()
     {
+        isGameStarted.Value = false;
         isGameOver.Value = false;
         isHardnessActive.Value = false;
         hardnessCurrentAmount.Value = 0;
@@ -95,5 +105,6 @@ public class GameAdministrator : MonoBehaviour
     {
         int points =  (int)(timePlayed.Value * pointsPerSecond.Value);
         totalPoints.Value = points;
+        bgmToPlay.Raise(gameoverBGMAudio);
     }
 }

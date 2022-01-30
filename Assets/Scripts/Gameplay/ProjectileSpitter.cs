@@ -12,6 +12,10 @@ public class ProjectileSpitter : MonoBehaviour
     [SerializeField] private FloatReference minSpawnTime = default(FloatReference);
     [SerializeField] private FloatReference maxSpawnTime = default(FloatReference); 
     [SerializeField] private GameEvent setPunish = default(GameEvent);
+    [Header("Audio")]
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip spittingMortalAudio = default(AudioClip);
+    [SerializeField] private AudioClip spittingHardnessAudio = default(AudioClip);
     private int spittedProjectilesAmount;
     private float leftBorder;
     private float rightBorder;
@@ -73,6 +77,7 @@ public class ProjectileSpitter : MonoBehaviour
                     mortalProjectiles[i].SetActive(true);
                     lastProjectileType = ProjectileType.Mortal;
                     spittedProjectilesAmount++;
+                    sfxToPlay.Raise(spittingMortalAudio);
                     break;
                 }
             }
@@ -88,6 +93,7 @@ public class ProjectileSpitter : MonoBehaviour
                     hardnessProjectiles[i].SetActive(true);
                     lastProjectileType = ProjectileType.Hardness;
                     spittedProjectilesAmount++;
+                    sfxToPlay.Raise(spittingHardnessAudio);
                     break;
                 }
             }

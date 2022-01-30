@@ -704,6 +704,8 @@ MonoBehaviour:
   panelCanvasGroup: {fileID: 8057179885378935711}
   currentPointsLabel: {fileID: 9200646422370456416}
   leaderboardText: {fileID: 1419546689658329485}
+  sfxToPlay: {fileID: 11400000, guid: da83c9e5d5caf594d91b9ff51d1329c3, type: 2}
+  uiConfirmAudio: {fileID: 8300000, guid: c4e4b28a45931fa4f96c0465ebe83d74, type: 3}
 --- !u!114 &1300201823457584804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +753,7 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: ac0077f38948a3b4bbd7d4de7c7d01f1, type: 2}
   _event: {fileID: 11400000, guid: ac0077f38948a3b4bbd7d4de7c7d01f1, type: 2}
   _response:
     m_PersistentCalls:

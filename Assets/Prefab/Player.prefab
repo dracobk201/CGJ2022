@@ -55,6 +55,7 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  playerDead: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
   isHardnessActive:
     _useConstant: 0
     _constantValue: 0
@@ -79,7 +80,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c1eb61afe4b2c4caa0d41480d4f4de, type: 2}
-  playerDead: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: da83c9e5d5caf594d91b9ff51d1329c3, type: 2}
+  turningOffHardnessAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
+  turningOnHardnessAudio: {fileID: 8300000, guid: c9c31670c40291a41a06bcf59550e3b9, type: 3}
+  gameOverAudio: {fileID: 8300000, guid: 0e6c7cf4fafb5ee468a252ca20a3bd9b, type: 3}
 --- !u!114 &3473337984596558794
 MonoBehaviour:
   m_ObjectHideFlags: 0

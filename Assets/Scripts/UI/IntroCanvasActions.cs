@@ -9,10 +9,14 @@ public class IntroCanvasActions : MonoBehaviour
     [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private GameEvent startGame = default(GameEvent);
     [SerializeField] private CanvasGroup canvasGroup = default(CanvasGroup);
+    [Header("Audio")]
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip uiConfirmAudio = default(AudioClip);
 
-    public void Awake()
+    private void Awake()
     {
-        isGameStarted.Value = false;
+        if (!PlayerPrefs.GetString("username", "none").Equals("none"))
+            playfabUsername.Value = PlayerPrefs.GetString("username", "none");
         if (!string.IsNullOrEmpty(playfabUsername.Value.Trim()))
             usernameInputField.text = playfabUsername.Value;
     }
@@ -20,7 +24,9 @@ public class IntroCanvasActions : MonoBehaviour
     public void StartGame()
     {
         if (usernameInputField.text.Trim().Equals(string.Empty)) return;
+        sfxToPlay.Raise(uiConfirmAudio);
         playfabUsername.Value = usernameInputField.text.Trim();
+        PlayerPrefs.SetString("username", playfabUsername.Value);
         isGameStarted.Value = true;
         HidePanel();
         startGame.Raise();
