@@ -7,6 +7,7 @@ public class ProjectileSpitter : MonoBehaviour
     [SerializeField] private GameObjectCollection mortalProjectiles = default(GameObjectCollection);
     [SerializeField] private GameObjectCollection hardnessProjectiles = default(GameObjectCollection);
     [SerializeField] private BoolReference isGameOver = default(BoolReference);
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private IntReference punishFrequency = default(IntReference);
     [SerializeField] private FloatReference minSpawnTime = default(FloatReference);
     [SerializeField] private FloatReference maxSpawnTime = default(FloatReference); 
@@ -20,7 +21,7 @@ public class ProjectileSpitter : MonoBehaviour
     private void Start()
     {
         spittedProjectilesAmount = 0;
-        lastProjectileType = ProjectileType.mortal;
+        lastProjectileType = ProjectileType.Mortal;
 
         Vector2 topRightCorner = new Vector2(1, 1);
         Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
@@ -37,13 +38,16 @@ public class ProjectileSpitter : MonoBehaviour
         var time = Random.Range(minSpawnTime.Value, maxSpawnTime.Value);
         while (!isGameOver.Value)
         {
-            if (time <= 0)
+            if (isGameStarted.Value) 
             {
-                SpitEnemy();
-                time = Random.Range(minSpawnTime.Value, maxSpawnTime.Value);
+                if (time <= 0)
+                {
+                    SpitEnemy();
+                    time = Random.Range(minSpawnTime.Value, maxSpawnTime.Value);
+                }
+                else
+                    time -= Time.deltaTime;
             }
-            else
-                time -= Time.deltaTime;
             yield return null;
         }
     }
@@ -58,7 +62,7 @@ public class ProjectileSpitter : MonoBehaviour
         var lookRotation = Quaternion.LookRotation(direction);
         var initialRotation = lookRotation;
 
-        if (lastProjectileType.Equals(ProjectileType.hardness))
+        if (lastProjectileType.Equals(ProjectileType.Hardness))
         {
             for (int i = 0; i < mortalProjectiles.Count; i++)
             {
@@ -67,13 +71,13 @@ public class ProjectileSpitter : MonoBehaviour
                     mortalProjectiles[i].transform.localPosition = initialPosition;
                     mortalProjectiles[i].transform.localRotation = initialRotation;
                     mortalProjectiles[i].SetActive(true);
-                    lastProjectileType = ProjectileType.mortal;
+                    lastProjectileType = ProjectileType.Mortal;
                     spittedProjectilesAmount++;
                     break;
                 }
             }
         }
-        else if (lastProjectileType.Equals(ProjectileType.mortal))
+        else if (lastProjectileType.Equals(ProjectileType.Mortal))
         {
             for (int i = 0; i < hardnessProjectiles.Count; i++)
             {
@@ -82,7 +86,7 @@ public class ProjectileSpitter : MonoBehaviour
                     hardnessProjectiles[i].transform.localPosition = initialPosition;
                     hardnessProjectiles[i].transform.localRotation = initialRotation;
                     hardnessProjectiles[i].SetActive(true);
-                    lastProjectileType = ProjectileType.hardness;
+                    lastProjectileType = ProjectileType.Hardness;
                     spittedProjectilesAmount++;
                     break;
                 }
@@ -99,5 +103,5 @@ public class ProjectileSpitter : MonoBehaviour
 
 public enum ProjectileType
 {
-    mortal, hardness
+    Mortal, Hardness
 }

@@ -26,8 +26,8 @@ public class ProjectileObjectPool : MonoBehaviour
             GameObject hardness = Instantiate(hardnessProjectilePrefab) as GameObject;
             mortal.GetComponent<Transform>().SetParent(mortalContainer);
             hardness.GetComponent<Transform>().SetParent(hardnessContainer);
-            mortal.GetComponent<ProjectileMovement>().type = ProjectileType.mortal;
-            hardness.GetComponent<ProjectileMovement>().type = ProjectileType.hardness;
+            mortal.GetComponent<ProjectileMovement>().type = ProjectileType.Mortal;
+            hardness.GetComponent<ProjectileMovement>().type = ProjectileType.Hardness;
             mortalProjectiles.Add(mortal);
             hardnessProjectiles.Add(hardness);
             mortal.SetActive(false);

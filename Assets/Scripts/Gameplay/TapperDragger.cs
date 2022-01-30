@@ -4,6 +4,8 @@ using UnityEngine;
 public class TapperDragger : MonoBehaviour
 {
     [SerializeField] private GameEvent playerTapped = default(GameEvent);
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
+
     private float dist;
     private bool dragging = false;
     private Vector3 offset;
@@ -22,6 +24,8 @@ public class TapperDragger : MonoBehaviour
 
     private void Update()
     {
+        if (!isGameStarted.Value) return;
+
         Vector3 v3;
 
         if (Input.touchCount != 1)

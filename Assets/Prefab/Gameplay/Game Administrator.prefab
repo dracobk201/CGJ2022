@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &641697857391928648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3768757753322814504}
+  - component: {fileID: 4568056239817639410}
+  - component: {fileID: 2665057255319204246}
+  - component: {fileID: 1875834246038131252}
+  - component: {fileID: 5631767409671563909}
+  - component: {fileID: 5032189548394566360}
+  m_Layer: 0
+  m_Name: Game Administrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3768757753322814504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4568056239817639410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a8c8d8d15785f46981a698fedd217c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ad77f9dfa66ae7048b9b4c098748e6f8, type: 2}
+  isGameOver:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  isHardnessActive:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
+  initialPunishFrequency:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2bfda4d70c002494e8bbdc41ce89a830, type: 2}
+  punishFrequency:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 98d9db61119d5d640a49f5dce28ec341, type: 2}
+  initialMinSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: bda572968750238408c06790d7aad1ac, type: 2}
+  minSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 95993df0183dbdf4d9b98b35a6cec01a, type: 2}
+  initialMaxSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2e434de092192df4c98662c770f4575a, type: 2}
+  maxSpawnTime:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 536b8d833a19dc341b5e1cafd7375f7e, type: 2}
+  hardnessCurrentAmount:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 332916267fd338e4ea2c9223bba58fde, type: 2}
+  initialProjectileVelocity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2d7d4cbd017d65943aa8726bae220eba, type: 2}
+  projectileVelocity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 25f7a4251cbde294097397381735a087, type: 2}
+  totalPoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b489c7f4d1d653c4c8aa370bb9ffc3f3, type: 2}
+  hardnessProjectilePoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 729e8510627640243a733c89c5b11b08, type: 2}
+  mortalProjectilePoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: cb369006c7776f646a95049ed9194aff, type: 2}
+  mortalProjectilesDestroyed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: dd4d37e4fd1f505488b104c5085cc757, type: 2}
+  pointsPerSecond:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: d496248eef243c64cb817edcfe9c8d5d, type: 2}
+  timePlayed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ac9e5c4221aae094789bff1336de06e1, type: 2}
+--- !u!114 &2665057255319204246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 1b0925c2da96ae540a108bdd8b9dd438, type: 2}
+  _event: {fileID: 11400000, guid: 1b0925c2da96ae540a108bdd8b9dd438, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameSetter, Assembly-CSharp
+        m_MethodName: GeneratePunish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1875834246038131252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
+  _event: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: DecreaseFrecuency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5631767409671563909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ed83aa78a5e3640b83048089f27957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: 74cb246f1f1ad8e4687961cdf98e996b, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: IncreasePoints
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
+--- !u!114 &5032189548394566360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
+  _event: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: IncreasePointsWithSeconds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

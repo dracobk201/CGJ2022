@@ -1,13 +1,11 @@
 using UnityEngine;
-using System.Collections;
 using ScriptableObjectArchitecture;
 using MoreMountains.NiceVibrations;
 
 public class HardnessSystem : MonoBehaviour
 {
-    public Material normalSphere;
-    public Material hardSphere;
-
+    [SerializeField] private Material normalSphere = default(Material);
+    [SerializeField] private Material hardSphere = default(Material);
 
     [SerializeField] private BoolReference isGameOver = default(BoolReference);
     [SerializeField] private BoolReference isHardnessActive = default(BoolReference);
@@ -33,7 +31,7 @@ public class HardnessSystem : MonoBehaviour
 
     public void ProjectileImpact(ProjectileType type)
     {
-        if (type.Equals(ProjectileType.mortal))
+        if (type.Equals(ProjectileType.Mortal))
         {
             if (isHardnessActive.Value == true)
             {
@@ -58,7 +56,7 @@ public class HardnessSystem : MonoBehaviour
 
             }
         }
-        else if (type.Equals(ProjectileType.hardness))
+        else if (type.Equals(ProjectileType.Hardness))
         {
             MMVibrationManager.Haptic(HapticTypes.LightImpact);
             hardnessCurrentAmount.Value += hardnessIncrementalAmount.Value;
@@ -76,8 +74,6 @@ public class HardnessSystem : MonoBehaviour
         else if (!isHardnessActive.Value && hardnessCurrentAmount.Value > 0){
             isHardnessActive.Value = true;
             this.GetComponent<Renderer>().material = hardSphere;
-
         }
-
     }
 }
