@@ -120,7 +120,7 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: ac9e5c4221aae094789bff1336de06e1, type: 2}
   bgmToPlay: {fileID: 11400000, guid: 6f1edf38fddecee4bba3e2f45843b582, type: 2}
-  gameplayBGMAudio: {fileID: 8300000, guid: 80b42677a46625846a85dcd652cffbaa, type: 3}
+  gameplayBGMAudio: {fileID: 8300000, guid: 22c76a2ab82ae5948909a9d5b308c3b6, type: 3}
   gameoverBGMAudio: {fileID: 8300000, guid: ca7b3ed73eb9bbb4aa8e92b7979b4b22, type: 3}
 --- !u!114 &2665057255319204246
 MonoBehaviour:
