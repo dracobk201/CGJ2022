@@ -25,6 +25,7 @@ public class HardnessSystem : MonoBehaviour
             hardnessCurrentAmount.Value -= hardnessDecreaseFactor.Value * Time.deltaTime;
             if (hardnessCurrentAmount.Value <= 0){
                 hardnessCurrentAmount.Value = 0;
+                isHardnessActive.Value = false;
                 this.GetComponent<Renderer>().material = normalSphere;
             }
         }
@@ -42,7 +43,9 @@ public class HardnessSystem : MonoBehaviour
             else
             {
                 MMVibrationManager.Haptic(HapticTypes.Failure);
-                hardnessCurrentAmount.Value -= 500;
+                //hardnessCurrentAmount.Value -= 500;
+                isGameOver.Value = true;
+                playerDead.Raise();
             }
 
             if (hardnessCurrentAmount.Value <= 0)
@@ -50,7 +53,9 @@ public class HardnessSystem : MonoBehaviour
                 hardnessCurrentAmount.Value = 0;
                 //isGameOver.Value = true;
                 //playerDead.Raise();
+                isHardnessActive.Value = false;
                 this.GetComponent<Renderer>().material = normalSphere;
+
             }
         }
         else if (type.Equals(ProjectileType.hardness))
