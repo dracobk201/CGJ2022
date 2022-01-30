@@ -23,8 +23,10 @@ public class HardnessSystem : MonoBehaviour
         if (hardnessCurrentAmount.Value > 0 && isHardnessActive.Value)
         {
             hardnessCurrentAmount.Value -= hardnessDecreaseFactor.Value * Time.deltaTime;
-            if (hardnessCurrentAmount.Value <= 0)
+            if (hardnessCurrentAmount.Value <= 0){
                 hardnessCurrentAmount.Value = 0;
+                this.GetComponent<Renderer>().material = normalSphere;
+            }
         }
     }
 
@@ -46,8 +48,9 @@ public class HardnessSystem : MonoBehaviour
             if (hardnessCurrentAmount.Value <= 0)
             {
                 hardnessCurrentAmount.Value = 0;
-                isGameOver.Value = true;
-                playerDead.Raise();
+                //isGameOver.Value = true;
+                //playerDead.Raise();
+                this.GetComponent<Renderer>().material = normalSphere;
             }
         }
         else if (type.Equals(ProjectileType.hardness))
