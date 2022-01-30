@@ -5,6 +5,10 @@ using MoreMountains.NiceVibrations;
 
 public class HardnessSystem : MonoBehaviour
 {
+    public Material normalSphere;
+    public Material hardSphere;
+
+
     [SerializeField] private BoolReference isGameOver = default(BoolReference);
     [SerializeField] private BoolReference isHardnessActive = default(BoolReference);
     [SerializeField] private FloatReference hardnessDecreaseFactor = default(FloatReference);
@@ -57,9 +61,15 @@ public class HardnessSystem : MonoBehaviour
 
     public void PlayerTapped()
     {
-        if (isHardnessActive.Value)
+        if (isHardnessActive.Value){
             isHardnessActive.Value = false;
-        else if (!isHardnessActive.Value && hardnessCurrentAmount.Value > 0)
+            this.GetComponent<Renderer>().material = normalSphere;
+        }
+        else if (!isHardnessActive.Value && hardnessCurrentAmount.Value > 0){
             isHardnessActive.Value = true;
+            this.GetComponent<Renderer>().material = hardSphere;
+
+        }
+
     }
 }
