@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b45e0020c4039b408fee97c266e1437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSphere: {fileID: 2100000, guid: fa9761cf5b4ab5d48a3eb9e4e4e3fd41, type: 2}
+  hardSphere: {fileID: 2100000, guid: 235446ba537fa2f488518a7401c9fdc3, type: 2}
   isGameOver:
     _useConstant: 0
     _constantValue: 0
