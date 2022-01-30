@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 78c2187fea5deee499af3b57f2add076, type: 2}
+    - target: {fileID: 1365999423141394750, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78c2187fea5deee499af3b57f2add076, type: 2}
     - target: {fileID: 4538349485999211346, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -58,6 +62,18 @@ PrefabInstance:
     - target: {fileID: 4538349485999211348, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
       propertyPath: m_Name
       value: Hardness Projectile Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827565158262486752, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.28763008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827565158262486752, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827565158262486752, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186009724696697206, guid: 4097ed103ce44ec4bbff23d573cd349b, type: 3}
       propertyPath: m_Materials.Array.data[0]
