@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4538349485999211346}
   - component: {fileID: 584442382189435160}
-  - component: {fileID: 4538349485999211349}
+  - component: {fileID: 4116202681722187481}
   - component: {fileID: 8775058445772320078}
   - component: {fileID: 8186009724696697206}
   - component: {fileID: 5934328689729622520}
@@ -58,8 +58,8 @@ MonoBehaviour:
   playerImpacted: {fileID: 11400000, guid: 74cb246f1f1ad8e4687961cdf98e996b, type: 2}
   increasePunish: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
   type: 0
---- !u!65 &4538349485999211349
-BoxCollider:
+--- !u!135 &4116202681722187481
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -69,7 +69,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &8775058445772320078
 MeshFilter:

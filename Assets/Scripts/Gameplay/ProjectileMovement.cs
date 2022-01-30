@@ -29,7 +29,7 @@ public class ProjectileMovement : MonoBehaviour
     private IEnumerator AutoDestruction()
     {
         yield return new WaitForSeconds(projectileTimeOfLife.Value);
-        if (gameObject.activeInHierarchy && type.Equals(ProjectileType.mortal))
+        if (gameObject.activeInHierarchy && type.Equals(ProjectileType.Mortal))
             increasePunish.Raise();
         Destroy();
     }

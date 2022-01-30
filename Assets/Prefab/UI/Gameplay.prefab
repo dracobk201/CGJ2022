@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8362319038399648107}
   - component: {fileID: 366943972147917891}
   m_Layer: 5
-  m_Name: x
+  m_Name: x Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 414723684254975471}
   - component: {fileID: 8332470310112791986}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 8589520323948235546}
   - component: {fileID: 4697025223884280715}
   m_Layer: 5
-  m_Name: txtScore
+  m_Name: Mortal Projectiles Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,8 +469,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1100549241358306008}
   - component: {fileID: 7609165588791377714}
-  - component: {fileID: 1554127150676835336}
-  - component: {fileID: 8009200424867997475}
   m_Layer: 5
   m_Name: Gamplay Container
   m_TagString: Untagged
@@ -513,46 +511,8 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!222 &1554127150676835336
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928421736740587785}
-  m_CullTransparentMesh: 1
---- !u!114 &8009200424867997475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928421736740587785}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7190940215302732696
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,8 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937356582728672303}
   - component: {fileID: 4956452108064740756}
-  - component: {fileID: 1420859608692719052}
-  - component: {fileID: 4128059173034258106}
+  - component: {fileID: 5978770548074950160}
   m_Layer: 5
   m_Name: Gameplay
   m_TagString: Untagged
@@ -608,6 +567,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
+  mortalProjectilesDestroyed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: dd4d37e4fd1f505488b104c5085cc757, type: 2}
   hardnessCurrentAmount:
     _useConstant: 0
     _constantValue: 0
@@ -616,46 +579,47 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 8d6fc47fcb73fbd4fb5c1705ac922570, type: 2}
+  timePlayed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ac9e5c4221aae094789bff1336de06e1, type: 2}
+  canvasGroup: {fileID: 7609165588791377714}
   hardnessBar: {fileID: 1584992077800739700}
   hardnessActiveIcon: {fileID: 2650435215439630987}
---- !u!222 &1420859608692719052
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7190940215302732696}
-  m_CullTransparentMesh: 1
---- !u!114 &4128059173034258106
+  mortalProjectilesLabel: {fileID: 4697025223884280715}
+  currentTimeLabel: {fileID: 3628447389964549013}
+--- !u!114 &5978770548074950160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7190940215302732696}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: e3c75ae35e7ead244b91dbe3c1ce291f, type: 2}
+  _event: {fileID: 11400000, guid: e3c75ae35e7ead244b91dbe3c1ce291f, type: 2}
+  _response:
     m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+      m_Calls:
+      - m_Target: {fileID: 4956452108064740756}
+        m_TargetAssemblyTypeName: GameplayCanvasActions, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8490003352458483544
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +632,7 @@ GameObject:
   - component: {fileID: 5197259566786604353}
   - component: {fileID: 3628447389964549013}
   m_Layer: 5
-  m_Name: txtTimer
+  m_Name: Timer Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

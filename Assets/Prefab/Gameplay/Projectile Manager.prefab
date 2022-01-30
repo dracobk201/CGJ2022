@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3638815368587578185}
   - component: {fileID: 3638815368587578182}
   m_Layer: 0
-  m_Name: Enemy Manager
+  m_Name: Projectile Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ad77f9dfa66ae7048b9b4c098748e6f8, type: 2}
   punishFrequency:
     _useConstant: 0
     _constantValue: 0

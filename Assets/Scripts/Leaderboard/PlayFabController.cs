@@ -7,7 +7,7 @@ using ScriptableObjectArchitecture;
 public class PlayFabController : MonoBehaviour
 {
     [SerializeField] private BoolReference offlineMode = default(BoolReference);
-    [SerializeField] private IntReference enemiesKilled = default(IntReference);
+    [SerializeField] private IntReference totalPoints = default(IntReference);
     [SerializeField] private StringReference playfabUsername = default(StringReference);
     [SerializeField] private StringCollection currentLeaderboard = default(StringCollection);
     [SerializeField] private GameEvent showLeaderboard = default(GameEvent);
@@ -44,7 +44,7 @@ public class PlayFabController : MonoBehaviour
                 new StatisticUpdate
                 {
                     StatisticName = "BestScore",
-                    Value = enemiesKilled.Value
+                    Value = totalPoints.Value
                 }
             }
         };
@@ -99,7 +99,7 @@ public class PlayFabController : MonoBehaviour
         if (offlineMode.Value) return;
         currentLeaderboard.Clear();
         foreach (var currentPosition in result.Leaderboard)
-            currentLeaderboard.Add($"{currentPosition.Position+1}. {currentPosition.DisplayName} has {currentPosition.StatValue} enemies killed");
+            currentLeaderboard.Add($"{currentPosition.Position+1}. {currentPosition.DisplayName} has {currentPosition.StatValue} points");
 
         showLeaderboard.Raise();
         Debug.Log($"Successful Leaderboard get");

@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4568056239817639410}
   - component: {fileID: 2665057255319204246}
   - component: {fileID: 1875834246038131252}
+  - component: {fileID: 5631767409671563909}
+  - component: {fileID: 5032189548394566360}
   m_Layer: 0
-  m_Name: Game Settings
+  m_Name: Game Administrator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a8c8d8d15785f46981a698fedd217c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ad77f9dfa66ae7048b9b4c098748e6f8, type: 2}
   isGameOver:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2373ddb2a84c7ff45b3db384842dfe15, type: 2}
-  isDarknessActive:
+  isHardnessActive:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 77c0484e4ef748546bcf50a675e52d69, type: 2}
@@ -89,6 +95,30 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 25f7a4251cbde294097397381735a087, type: 2}
+  totalPoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b489c7f4d1d653c4c8aa370bb9ffc3f3, type: 2}
+  hardnessProjectilePoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 729e8510627640243a733c89c5b11b08, type: 2}
+  mortalProjectilePoints:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: cb369006c7776f646a95049ed9194aff, type: 2}
+  mortalProjectilesDestroyed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: dd4d37e4fd1f505488b104c5085cc757, type: 2}
+  pointsPerSecond:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: d496248eef243c64cb817edcfe9c8d5d, type: 2}
+  timePlayed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ac9e5c4221aae094789bff1336de06e1, type: 2}
 --- !u!114 &2665057255319204246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,14 +166,79 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
   _event: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4568056239817639410}
-        m_TargetAssemblyTypeName: GameSetter, Assembly-CSharp
-        m_MethodName: DeccreaseFrecuency
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: DecreaseFrecuency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5631767409671563909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ed83aa78a5e3640b83048089f27957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: 74cb246f1f1ad8e4687961cdf98e996b, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: IncreasePoints
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
+--- !u!114 &5032189548394566360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697857391928648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
+  _event: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4568056239817639410}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: IncreasePointsWithSeconds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
