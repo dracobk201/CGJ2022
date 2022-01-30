@@ -299,21 +299,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5151806807858735038, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
-      propertyPath: m_Name
-      value: MortalProjectileIcon
-      objectReference: {fileID: 0}
     - target: {fileID: 7190940215302732696, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
       propertyPath: m_Name
       value: Gameplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609165588791377714, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609165588791377714, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}

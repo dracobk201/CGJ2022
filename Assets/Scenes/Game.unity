@@ -489,14 +489,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1330202740239235148, guid: da90f0ca5f2bfd64b9dd2d10d6649a6f, type: 3}
-      propertyPath: _previouslyRegisteredEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: e3c75ae35e7ead244b91dbe3c1ce291f, type: 2}
-    - target: {fileID: 3180391033536371567, guid: da90f0ca5f2bfd64b9dd2d10d6649a6f, type: 3}
-      propertyPath: _previouslyRegisteredEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: ac1e28f73ceb47648a5221f168448051, type: 2}
     - target: {fileID: 3459146169149130276, guid: da90f0ca5f2bfd64b9dd2d10d6649a6f, type: 3}
       propertyPath: _previouslyRegisteredEvent
       value: 
@@ -562,14 +554,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2168918402062114257, guid: 44b30acec06f05040846a05ad030e31d, type: 3}
-      propertyPath: _previouslyRegisteredEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: ac0077f38948a3b4bbd7d4de7c7d01f1, type: 2}
-    - target: {fileID: 4248042330428061156, guid: 44b30acec06f05040846a05ad030e31d, type: 3}
-      propertyPath: _previouslyRegisteredEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: e3c75ae35e7ead244b91dbe3c1ce291f, type: 2}
     - target: {fileID: 7085615582808130142, guid: 44b30acec06f05040846a05ad030e31d, type: 3}
       propertyPath: m_Name
       value: Gameplay Canvas
