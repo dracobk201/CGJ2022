@@ -51,7 +51,7 @@ public class PlayFabController : MonoBehaviour
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnLeaderboardError);
     }
 
-    public void GetLearderboard()
+    public void GetLeaderboard()
     {
         if (offlineMode.Value) return;
         var request = new GetLeaderboardRequest
@@ -84,7 +84,7 @@ public class PlayFabController : MonoBehaviour
     {
         if (offlineMode.Value) return;
         Debug.Log($"Successful Leaderboard sent> {result.ToJson()}");
-        GetLearderboard();
+        Invoke(nameof(GetLeaderboard),0.2f);
     }
 
     private void OnLeaderboardError(PlayFabError error)

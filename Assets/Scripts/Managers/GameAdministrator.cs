@@ -77,7 +77,7 @@ public class GameAdministrator : MonoBehaviour
         }
         else
         {
-            float valueFactor = Random.Range(2, 10);
+            float valueFactor = Random.Range(10, 20);
             projectileVelocity.Value += (valueFactor / 100);
         }
         

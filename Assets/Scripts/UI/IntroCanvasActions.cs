@@ -16,9 +16,10 @@ public class IntroCanvasActions : MonoBehaviour
     private void Awake()
     {
         if (!PlayerPrefs.GetString("username", "none").Equals("none"))
+        {
             playfabUsername.Value = PlayerPrefs.GetString("username", "none");
-        if (!string.IsNullOrEmpty(playfabUsername.Value.Trim()))
             usernameInputField.text = playfabUsername.Value;
+        }
     }
 
     public void StartGame()
