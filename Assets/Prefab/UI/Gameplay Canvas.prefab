@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391056684620084204, guid: cc7f3ae1c0a14124db49e6525e8e0357, type: 3}
+      propertyPath: canvasGameplay
+      value: 
+      objectReference: {fileID: 114243747665323206}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc7f3ae1c0a14124db49e6525e8e0357, type: 3}
 --- !u!224 &8095044011393555502 stripped
@@ -295,15 +299,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5151806807858735038, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
+      propertyPath: m_Name
+      value: MortalProjectileIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 7190940215302732696, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
       propertyPath: m_Name
       value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609165588791377714, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609165588791377714, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
 --- !u!224 &7282011654102269915 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 937356582728672303, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
+  m_PrefabInstance: {fileID: 7497596027632851956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &114243747665323206 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 7609165588791377714, guid: 3e8ac6aa43882c9429d3719ca6f700b4, type: 3}
   m_PrefabInstance: {fileID: 7497596027632851956}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8310175670194144476
