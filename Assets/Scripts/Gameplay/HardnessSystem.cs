@@ -20,8 +20,6 @@ public class HardnessSystem : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
     [SerializeField] private AudioClip turningOffHardnessAudio = default(AudioClip);
-    [SerializeField] private AudioClip destroyingMortalProyjectile = default(AudioClip);
-    [SerializeField] private AudioClip destroyingHardnessProjectile = default(AudioClip);    
     [SerializeField] private AudioClip turningOnHardnessAudio = default(AudioClip);
     [SerializeField] private AudioClip gameOverAudio = default(AudioClip);
 
@@ -47,8 +45,6 @@ public class HardnessSystem : MonoBehaviour
             {
                 MMVibrationManager.Haptic(HapticTypes.RigidImpact);
                 hardnessCurrentAmount.Value -= mortalDamageValue.Value;
-                sfxToPlay.Raise(destroyingMortalProyjectile);
-
             }
             else
             {
@@ -75,8 +71,6 @@ public class HardnessSystem : MonoBehaviour
             hardnessCurrentAmount.Value += hardnessIncrementalAmount.Value;
             if (hardnessCurrentAmount.Value > hardnessMaxAmount.Value)
                 hardnessCurrentAmount.Value = hardnessMaxAmount.Value;
-            sfxToPlay.Raise(destroyingHardnessProjectile);
-
         }
     }
 

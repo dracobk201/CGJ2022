@@ -4861,9 +4861,9 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: 3d786a89cf2611f469b61a1bac258f39, type: 2}
   playerImpacted: {fileID: 11400000, guid: 74cb246f1f1ad8e4687961cdf98e996b, type: 2}
   increasePunish: {fileID: 11400000, guid: a14fb9db0cf750a42be912ba7f1eb79f, type: 2}
-  sfxToPlay: {fileID: 0}
-  mortalImpactAudio: {fileID: 0}
-  hardnessImpactAudio: {fileID: 0}
+  sfxToPlay: {fileID: 11400000, guid: da83c9e5d5caf594d91b9ff51d1329c3, type: 2}
+  mortalImpactAudio: {fileID: 8300000, guid: 99e619488f2b5c84781f3c4a33cddc65, type: 3}
+  hardnessImpactAudio: {fileID: 8300000, guid: 6ce442b2e25ebb641be328a0804a5fc0, type: 3}
   type: 0
 --- !u!135 &4116202681722187481
 SphereCollider:
