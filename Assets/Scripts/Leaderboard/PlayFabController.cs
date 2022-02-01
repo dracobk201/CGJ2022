@@ -6,7 +6,6 @@ using ScriptableObjectArchitecture;
 
 public class PlayFabController : MonoBehaviour
 {
-    [SerializeField] private BoolReference offlineMode = default(BoolReference);
     [SerializeField] private IntReference totalPoints = default(IntReference);
     [SerializeField] private StringReference playfabUsername = default(StringReference);
     [SerializeField] private StringCollection currentLeaderboard = default(StringCollection);
@@ -14,7 +13,6 @@ public class PlayFabController : MonoBehaviour
 
     public void Login()
     {
-        if (offlineMode.Value) return;
         var request = new LoginWithCustomIDRequest
         {
             CustomId = SystemInfo.deviceUniqueIdentifier,
@@ -25,7 +23,6 @@ public class PlayFabController : MonoBehaviour
 
     private void UpdateDisplayName()
     {
-        if (offlineMode.Value) return;
         PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest
         {
             DisplayName = playfabUsername.Value
@@ -36,7 +33,6 @@ public class PlayFabController : MonoBehaviour
 
     public void SendLeaderboard()
     {
-        if (offlineMode.Value) return;
         var request = new UpdatePlayerStatisticsRequest
         {
             Statistics = new List<StatisticUpdate>
@@ -53,7 +49,6 @@ public class PlayFabController : MonoBehaviour
 
     public void GetLeaderboard()
     {
-        if (offlineMode.Value) return;
         var request = new GetLeaderboardRequest
         {
             StatisticName = "BestScore",
@@ -67,14 +62,12 @@ public class PlayFabController : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
-        if (offlineMode.Value) return;
         Debug.Log($"{SystemInfo.deviceUniqueIdentifier} has been logged");
         UpdateDisplayName();
     }
 
     private void OnLoginFailure(PlayFabError error)
     {
-        if (offlineMode.Value) return;
         Debug.LogWarning("Something went wrong with your login call.");
         Debug.LogError("Here's some debug information:");
         Debug.LogError(error.GenerateErrorReport());
@@ -82,21 +75,18 @@ public class PlayFabController : MonoBehaviour
 
     private void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
-        if (offlineMode.Value) return;
         Debug.Log($"Successful Leaderboard sent> {result.ToJson()}");
         Invoke(nameof(GetLeaderboard),0.2f);
     }
 
     private void OnLeaderboardError(PlayFabError error)
     {
-        if (offlineMode.Value) return;
         Debug.LogError("Something went wrong with Leadearboard Update.");
         Debug.LogError(error.GenerateErrorReport());
     }
 
     private void OnLeaderboardGet(GetLeaderboardResult result)
     {
-        if (offlineMode.Value) return;
         currentLeaderboard.Clear();
         foreach (var currentPosition in result.Leaderboard)
             currentLeaderboard.Add($"{currentPosition.Position+1}. {currentPosition.DisplayName} has {currentPosition.StatValue} points");
@@ -107,7 +97,6 @@ public class PlayFabController : MonoBehaviour
 
     private void OnLeaderboardGetError(PlayFabError error)
     {
-        if (offlineMode.Value) return;
         Debug.LogError("Something went wrong with Leadearboard Get.");
         Debug.LogError(error.GenerateErrorReport());
     }
